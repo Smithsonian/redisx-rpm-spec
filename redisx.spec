@@ -3,45 +3,41 @@
 Name:                   redisx
 Version:                1.0.0~rc2
 Release:                %autorelease
-Summary:                An independent C/C++ Redis/Valkey client library and toolkit.
+Summary:                An independent C/C++ Redis/Valkey client library and toolkit
 License:                Unlicense
 URL:                    https://smithsonian.github.io/redisx
 Source0:                https://github.com/Smithsonian/redisx/archive/refs/tags/v%{upstream_version}.tar.gz
-Requires:               libxchange
-Requires:               libomp
-Requires:               openssl
-Requires:               popt
-Requires:               readline
-Requires:               libbsd
+Requires:               openssl%{_isa}
+Requires:               popt%{_isa}
+Requires:               readline%{_isa}
 BuildRequires:          gcc
-BuildRequires:          libxchange-devel
-BuildRequires:          libomp-devel
-BuildRequires:          openssl-devel
-BuildRequires:          popt-devel
-BuildRequires:          readline-devel
-BuildRequires:          libbsd-devel
 BuildRequires:          sed
-BuildRequires:          valkey
 BuildRequires:          doxygen >= 1.9.0
+BuildRequires:          libxchange-devel%{_isa}
+BuildRequires:          libomp-devel%{_isa}
+BuildRequires:          openssl-devel%{_isa}
+BuildRequires:          popt-devel%{_isa}
+BuildRequires:          readline-devel%{_isa}
+BuildRequires:          libbsd-devel%{_isa}
 
 %description
 
-RedisX is a free, light-weight Redis client library for C/C++. As such, it 
-should work with Redis forks / clones like Dragonfly or Valkey also. It 
-supports both interactive and pipelined Redis queries, managing and processing 
-subscriptions, atomic execution blocks, and LUA scripts loading. It can be 
-used with multiple Redis servers simultaneously also. RedisX is free to use, 
-in any way you like, without licensing restrictions.
+RedisX is a free, light-weight Redis client library for C/C++. It works with 
+Redis forks / clones like Dragonfly or Valkey also. It supports both 
+interactive and batch Redis queries, managing and processing subscriptions, 
+atomic execution blocks, and LUA scripts loading. It can be used with multiple 
+Redis servers simultaneously also. RedisX is free to use, in any way you like, 
+without licensing restrictions.
 
 %package devel
 Summary:                C development files for the RedisX C/C++ library
 Requires:               %{name}%{_isa} = %{version}-%{release}
-Requires:               libxchange-devel
-Requires:               libomp-devel
-Requires:               openssl-devel
-Requires:               popt-devel
-Requires:               readline-devel
-Requires:               libbsd-devel
+Requires:               libxchange-devel%{_isa}
+Requires:               libomp-devel%{_isa}
+Requires:               openssl-devel%{_isa}
+Requires:               popt-devel%{_isa}
+Requires:               readline-devel%{_isa}
+Requires:               libbsd-devel%{_isa}
 
 %description devel
 This sub-package provides C headers and non-versioned shared library symbolic 
