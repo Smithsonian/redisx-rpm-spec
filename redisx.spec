@@ -1,7 +1,7 @@
-%global upstream_version        1.0.0-rc2
+%global upstream_version        1.0.0-rc3
 
 Name:                   redisx
-Version:                1.0.0~rc2
+Version:                1.0.0~rc3
 Release:                %autorelease
 Summary:                An independent C/C++ Redis/Valkey client library and toolkit
 License:                Unlicense
@@ -22,12 +22,11 @@ BuildRequires:          libbsd-devel%{_isa}
 
 %description
 
-RedisX is a free, light-weight Redis client library for C/C++. It works with 
-Redis forks / clones like Dragonfly or Valkey also. It supports both 
-interactive and batch Redis queries, managing and processing subscriptions, 
-atomic execution blocks, and LUA scripts loading. It can be used with multiple 
-Redis servers simultaneously also. RedisX is free to use, in any way you like, 
-without licensing restrictions.
+RedisX is a free, light-weight Redis / Valkey client library for C/C++. It 
+supports both interactive and batch Redis queries, managing and processing 
+subscriptions, atomic execution blocks, and LUA script loading. It can be used 
+with multiple Redis servers simultaneously also. RedisX is free to use, in any 
+way you like, without licensing restrictions.
 
 %package devel
 Summary:                C development files for the RedisX C/C++ library
@@ -56,16 +55,12 @@ library. The HTML API documentation can also be used with the Eclipse IDE.
 
 %build
 
-# TODO simplify to one line with upstream changes...
-make %{?_smp_mflags} shared
-make tools
-make local-dox
+make %{?_smp_mflags}
 
 %check
 
-# Just check that the client is functional
 export LD_LIBRARY_PATH=$(pwd)/lib
-bin/redisx-cli --help
+make test
 
 %install
 
