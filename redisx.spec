@@ -1,7 +1,7 @@
-%global upstream_version        1.0.0-rc3
+%global upstream_version        1.0.0-rc4
 
 Name:                   redisx
-Version:                1.0.0~rc3
+Version:                1.0.0~rc4
 Release:                %autorelease
 Summary:                An independent C/C++ Redis/Valkey client library and toolkit
 License:                Unlicense
@@ -75,6 +75,7 @@ make DESTDIR=%{buildroot} libdir=%{_libdir} install
 
 %files devel
 %doc CONTRIBUTING.md
+%doc examples/*
 %{_includedir}/*
 %{_libdir}/libredisx.so
 
@@ -83,7 +84,6 @@ make DESTDIR=%{buildroot} libdir=%{_libdir} install
 %dir %{_docdir}/%{name}
 %doc %{_docdir}/%{name}/redisx.tag
 %doc %{_docdir}/%{name}/html
-%doc %{_docdir}/%{name}/*.c
 
 %changelog
 %autochangelog
