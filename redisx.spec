@@ -7,10 +7,6 @@ Summary:                An independent C/C++ Redis/Valkey client library and too
 License:                Unlicense
 URL:                    https://smithsonian.github.io/redisx
 Source0:                https://github.com/Smithsonian/redisx/archive/refs/tags/v%{upstream_version}.tar.gz
-Requires:               libxchange%{_isa} >= 1.0.1
-Requires:               openssl%{_isa}
-Requires:               popt%{_isa}
-Requires:               readline%{_isa}
 BuildRequires:          doxygen >= 1.13.0
 BuildRequires:          gcc
 BuildRequires:          libbsd-devel
@@ -32,12 +28,12 @@ way you like, without licensing restrictions.
 %package devel
 Summary:                C development files for the RedisX C/C++ library
 Requires:               %{name}%{_isa} = %{version}-%{release}
-Requires:               libbsd-devel
-Requires:               libomp-devel
-Requires:               libxchange-devel >= 1.0.1
-Requires:               openssl-devel
-Requires:               popt-devel
-Requires:               readline-devel
+Requires:               libbsd-devel%{_isa}
+Requires:               libomp-devel%{_isa}
+Requires:               libxchange-devel%{_isa} >= 1.0.1
+Requires:               openssl-devel%{_isa}
+Requires:               popt-devel%{_isa}
+Requires:               readline-devel%{_isa}
 
 
 %description devel
