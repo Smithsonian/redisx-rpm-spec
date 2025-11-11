@@ -1,7 +1,7 @@
-%global upstream_version        1.0.1
+%global upstream_version        1.0.2-rc1
 
 Name:                   redisx
-Version:                1.0.1
+Version:                1.0.2~rc1
 Release:                %autorelease
 Summary:                An independent C/C++ Redis/Valkey client library and toolkit
 License:                Unlicense
@@ -49,7 +49,7 @@ This package provides HTML documentation and examples for the RedisX C/C++
 library. The HTML API documentation can also be used with the Eclipse IDE.
 
 %prep
-%autosetup
+%autosetup -n redisx-%{upstream_version}
 
 %build
 
